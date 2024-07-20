@@ -20,11 +20,13 @@ CDNs improve page load times and reduce server load by caching content closer to
 React is a JavaScript Library. The name ‘React’ was chosen because the library was designed to allow developers to react to changes 
 in state and data within an application, and to update the user interface in a declarative and efficient manner.
 
-## Q 5. What is **crossorigin**  in React?
-The crossorigin attribute in the script tag enables Cross- Origin Resource Sharing (CORS) for loading external JavaScript files from different origin 
-than the hosting web page. This allows the script to access resources from the server hosting the script, such as making HTTP requests or accessing data.
-<script crossorigin="anonymous|use-credentials">
+## Q 5. What is **crossorigin** in React?
+
+The `crossorigin` attribute in the script tag enables Cross-Origin Resource Sharing (CORS) for loading external JavaScript files from a different origin than the hosting web page. This allows the script to access resources from the server hosting the script, such as making HTTP requests or accessing data.
+
+'<script crossorigin="anonymous|use-credentials"></script>'
 |  Value	|  Description|
+|---------|-------------|
 | anonymous | A cross-origin request is performed. No credentials are sent |
 |use-credentials | A cross-origin request is performed. Credentials are sent (e.g. a cookie, a certificate, a HTTP Basic authentication) |
 
@@ -37,7 +39,7 @@ React components into the DOM (Document Object Model).
 `react.development.js` is used for development purpose and the code is not compressed while `react.production.js` is used for production purposes
   and the code for this library is compressed.
 
-  ## Q 8. What is the difference between `async` and `defer` ?
+## Q 8. What is the difference between `async` and `defer` ?
 
 `async` and `defer` are boolean attributes which are used along with the `script` tag to load the external scripts efficiently in our we page.
 
@@ -47,6 +49,6 @@ Differences between `async` and `defer`.
 |-------------|-----------------|--------|
 | code | `<script async src = '...'></script>`  |  `<script defer src = '...'></script>`|
 | Loading sequence | Does not guarantee the execution sequense of the script    | Guarantees the execution sequence of scripts in wich they are ordered.   |
-| Execution sequence | Loads the scripts while HTML is being rendered. When scripts are loaded, then HTML rendering stops and execution of script starts.
-When execution is completed, HTML rendering resumes.  | Loads the scripts while HTML is being rendered. Executes the scripts only after the HTML is 
-completely rendered  
+| Execution sequence | Loads the scripts while HTML is being rendered. When scripts are loaded, then HTML rendering stops and execution of script starts. When execution is completed, HTML rendering resumes.  | Loads the scripts while HTML is being rendered. Executes the scripts only after the HTML is completely rendered
+
+
