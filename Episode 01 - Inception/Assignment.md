@@ -24,7 +24,7 @@ in state and data within an application, and to update the user interface in a d
 
 The `crossorigin` attribute in the script tag enables Cross-Origin Resource Sharing (CORS) for loading external JavaScript files from a different origin than the hosting web page. This allows the script to access resources from the server hosting the script, such as making HTTP requests or accessing data.
 
-'<script crossorigin="anonymous|use-credentials"></script>'
+`<script crossorigin="anonymous|use-credentials"></script>`
 |  Value	|  Description|
 |---------|-------------|
 | anonymous | A cross-origin request is performed. No credentials are sent |
