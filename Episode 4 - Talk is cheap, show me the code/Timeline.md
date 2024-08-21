@@ -1,3 +1,8 @@
+## Episode 04 - Talk is cheap, show me the code 🚀
+
+**Detailed Mention of Topics and Timestamps According to Namaste React Web Series**
+
+```
 00:14:00 - 🎨 Mock design, Various sections of a web page, and its coding
 00:23:00 - 🖌️ CSS coding
 00:29:00 - ⚛️ Created a Header element using React
@@ -22,3 +27,4 @@
 01:58:00 - 🆔 Unique Key Property
 02:08:05 - 📋 Lists & Keys, react.js org
 02:12:00 - 📚 Session Recap like this one
+```
