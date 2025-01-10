@@ -1,85 +1,108 @@
-// ## `Coding assignments solution` :
-
-// Que: Create a Nested header Element using `React.createElement`(h1,h2,h3 inside a div with class "title")
-
-const heading = React.createElement("div" , "className:title", [
-  React.createElement("h1", "key:h1" , "heading1"),
-  React.createElement("h2", "key:h2" , "heading2"),
-  React.createElement("h3", "key:h3" , "heading3")
-]);
-
-// Create the same element using JSX
-
-const heading2 = (
-  <div className="title">
-    <h1 key='h1'>Heading 1</h1>
-    <h2 key='h2'>Heading 2</h2>
-    <h3 key='h3'>Heading 3</h3>
-  </div>
-);
-
-// Que: Create a functional component of the same with JSX
-
-const header3 = () => {
-    return (
-        <div className='Title' key='title'>
-            <h1 key='h1'>This is h1 tag</h1>
-            <h2 key='h2'>This is h2 tag</h2>
-            <h3 key='h3'>This is h3 tag</h3>
-        </div>
-    );
-};
-
-// Que: Pass attribute into the tag in JSX
-
-const heading3 = (
-  <div className="title">
-    <h1 key='h1' style={{color:"red"}}>Heading 1</h1>
-    <h2 key='h2' style={{color:"green"}}>Heading 2</h2>
-    <h3 key='h3'style={{color:"blue"}}>Heading 3</h3>
-  </div>
-);
-
-// Que: Composition of Component (Add a component inside another)
-
-const Comp1=<h1>Namaste React</h1>;
-
-  const Comp2 =() =>{    
-    return(
-    <div className="title">
-      {Comp1}
-        <h1 key='h1' style={{color:"red"}}>Heading 1</h1>
-        <h2 key='h2' style={{color:"green"}}>Heading 2</h2>
-       <h3 key='h3'style={{color:"blue"}}>Heading 3</h3>
-      </div>
-    );
-  };
+// ## Namaste React Course by Akshay Saini
+// # Chapter 03 - Laying the Foundation
 
 /*
-Q: Create a Header Component from scratch using Functional Component with JSX
-- Add a Logo on Left
-- Add a search bar in middle
-- Add User icon on right
-- Add CSS to make it look nice
-*/
+ * This are the feature of Parcel
+ * Created A Server
+ * HMR - Hot Module Replacement
+ * File Watcher algorithm - C++
+ * BUNDLING
+ * MINIFY
+ * Cleaning our Code
+ * Dev abd Production Build
+ * Super Fast build algorithm
+ * Image Optimization
+ * Caching while development
+ * Compression
+ * Compatible with older version of browser
+ * HTTPS on dev
+ * port Number
+ * Consistent Hashing Algorithm
+ * Zero Config
+ * Tree shaking
+ *
+ *
+ * Transitive Dependencies
+ */
 
-import React from 'react'
-import logo from './logo.png';
-import './Header.css';
-import userIcon from './userIcon.png';
+// imported react and reactdom from nodemodule folder
+// import {React, createElement as ce} from 'react';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const Header = () => {
+// Create Header element like navbar using createElement
+/*
+ * 
+<div class="header">
+<h1>Title</h1>
+<ul>
+<li>Home</li>
+<li>About Us</li>
+</ul>
+ * 
+ * 
+ */
+// const heading = ce(
+//   "div",
+//   {
+//     className: "header",
+//     key: "header",
+//   },
+//   [ce(
+//     "h1",
+//     {
+//       key: "Title",
+//     },
+//   "Title"), ce(
+//     "ul",
+//     {
+//       key: "ul",
+//     },
+//   [ce(
+//     "li",
+//     {
+//       key: "Home",
+//     },
+//   "Home"),ce(
+//     "li",
+//     {
+//       key: "About Us",
+//     },
+//   "About Us")])]
+// )
+
+// create header element using JSX
+// JSX => React.createElement => Object => HTML (DOM) (babel does all the conversion)
+const heading = (
+  <h1 id="h1" key="h1">
+    This is JSX
+  </h1>
+);
+
+// React Component 
+// Functional component - new way of writing component 
+// Class component - old way of writing component
+
+// Title component is functional component
+const Title = () => {
   return (
-    <header className="header">
-      <div className="logo">Logo</div>
-      <div className="search-bar">
-        <input type="text" placeholder="Search..." />
-      </div>
-      <div className="user-icon">
-        <img src="./" alt="User Icon" />
-      </div>
-    </header>
-  );
-};
-
-export default Header;
+    <h1 id="title" key="title">Namaste React</h1>
+  )
+}
+// Header component is functional component
+const HeaderComponent = function (){
+  return (
+    <div>
+      <Title/>
+      {/* we can also use <Title()> */}
+      {/* we can also use <Title></Title> */}
+      {console.log(10)}
+    <h1>Namaste React Functional component</h1>
+    <h2>This is h2 tag</h2>
+    </div>
+  )
+}
+// create root using createRoot
+const root = ReactDOM.createRoot(document.getElementById("root"));
+// passing react element inside root
+root.render(<HeaderComponent/>);
